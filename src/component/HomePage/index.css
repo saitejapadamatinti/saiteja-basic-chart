@@ -1,0 +1,15 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.home-main-div{
+    background-color: #edf1f5;
+    height: 100vh;
+}
+.header-main-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dce0e7;
+}
