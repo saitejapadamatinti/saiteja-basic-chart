@@ -13,3 +13,23 @@
     align-items: center;
     border-bottom: 1px solid #dce0e7;
 }
+.home-input{
+    width: 100%;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+.home-bottom-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.homeChatBoxDiv{
+    display:flex;
+    height: 650px;
+    overflow-y:scroll;
+    flex-direction: column;
+    justify-content: flex-end;
+}

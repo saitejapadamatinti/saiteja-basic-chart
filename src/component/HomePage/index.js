@@ -4,19 +4,19 @@ import "./index.css"
 
 const userlist = ["Alan", "Bob", "Carol", "Dean", "Elin"]
 
-const userChatList = [
-    {
-        id: "1",
-        userName: "PubNub Bot",
-        time: "12:05",
-        userMessage: "Welcome to Team Chat. Send a message now to start interacting with other user in the app",
-        isLiked: false
-    }]
+const userChatList =
+{
+    id: "1",
+    userName: "PubNub Bot",
+    time: "12:05",
+    userMessage: "Welcome to Team Chat. Send a message now to start interacting with other user in the app",
+    isLiked: false
+}
 
 
 class Homepage extends Component {
     state = {
-        userName: '', userMessage: '', isLiked: '', userDataArray: [userChatList]
+        userName: 'Alan', userMessage: '', isLiked: '', userDataArray: [userChatList]
     }
 
     onInputElement = (event) => {
@@ -27,21 +27,26 @@ class Homepage extends Component {
         const { userName, userMessage, isLiked } = this.state
         event.preventDefault();
         let userlistLength = userlist.length
-        let randomName = Math.ceil(Math.random() * userlistLength) - 1
-        console.log(userlist[randomName])
+        let randomName = Math.ceil(Math.random() * userlistLength - 1)
         this.setState({ userName: userlist[randomName] })
-        const NewUserDetails = {
-            userName,
-            time: "12:05",
-            userMessage,
-            isLiked,
+        if (userMessage === "") {
+            alert("please enter valid input")
+        } else {
+            const NewUserDetails = {
+                userName,
+                time: "12:05",
+                userMessage,
+                isLiked,
+            }
+            this.setState(prevState => ({ userDataArray: [...prevState.userDataArray, NewUserDetails] }))
+            this.setState({ userMessage: "" })
         }
-        this.setState(prevState => ({ userDataArray: [...prevState.userDataArray, NewUserDetails] }))
-        this.setState({ userMessage: "" })
+
     }
 
     render() {
         const { userDataArray, userMessage } = this.state
+        console.log(userDataArray)
 
 
         return (
@@ -58,7 +63,8 @@ class Homepage extends Component {
 
                     </div>
                 </div>
-                <div>
+                <div className="home-bottom-div">
+                <div className="homeChatBoxDiv">
                     {
                         userDataArray.map((each) => (
                             <Userchat userDataArray={each} />
@@ -67,8 +73,9 @@ class Homepage extends Component {
 
                 </div>
                 <form onSubmit={this.onSubmitFormel}>
-                    <input value={userMessage} onChange={this.onInputElement} type="text" />
+                    <input className="home-input" value={userMessage} onChange={this.onInputElement} type="text" />
                 </form>
+                </div>
             </div>)
     }
 }
