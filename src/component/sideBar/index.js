@@ -7,7 +7,9 @@ const SideBar = () => {
         <>
             <div className="side-bar-main-div">
                 <div className="side-bar-user-main-div">
-                    <div className="side-bar-user-div"><h2>SP</h2></div>
+                    <div className="side-bar-user-div">
+                        <h2>SP</h2>
+                        </div><div className="side-bar-online-dot"></div>
                     <div>
                         <h3 className="home-intro-head">Saiteja Padamatinti</h3>
                         <p className="home-intro-para">Research Nurse</p>

@@ -3,7 +3,7 @@ import Userchat from "../userchat"
 import "./index.css"
 
 const userlist = ["Alan", "Bob", "Carol", "Dean", "Elin"]
-
+// taking time
 const msgTime = new Date(),
     curTime = msgTime.getHours() + ':' + msgTime.getMinutes()
 
@@ -25,9 +25,11 @@ class Homepage extends Component {
         this.setState({ userMessage: event.target.value })
     }
 
+    // on submission 
     onSubmitFormel = (event) => {
         const { userName, userMessage, isLiked, time } = this.state
         event.preventDefault();
+    // Taking Random Name and Added to State
         let userlistLength = userlist.length
         let randomName = Math.ceil(Math.random() * userlistLength - 1)
         this.setState({ userName: userlist[randomName] })
@@ -41,6 +43,7 @@ class Homepage extends Component {
                 userMessage,
                 isLiked,
             }
+    // adding new input array to old array
             this.setState(prevState => ({ userDataArray: [...prevState.userDataArray, NewUserDetails] }))
             this.setState({ userMessage: "" })
         }

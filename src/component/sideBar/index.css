@@ -43,3 +43,12 @@
     align-items: center;
     margin-top: 20px;
 }
+.side-bar-online-dot{
+    background-color: #b6e378;
+    padding: 5px;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    position: relative;
+    left: -28px;
+    top: 23px;
+}

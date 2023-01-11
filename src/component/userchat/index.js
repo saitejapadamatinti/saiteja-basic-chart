@@ -4,6 +4,7 @@ const Userchat = (props) =>{
     const {userDataArray} = props
     const {userName,userMessage,isLiked,time} = userDataArray
 
+    // taking first two letters from the user name
     const newShortName = userName[0] + userName[1]
       
 return (
