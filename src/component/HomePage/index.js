@@ -4,19 +4,21 @@ import "./index.css"
 
 const userlist = ["Alan", "Bob", "Carol", "Dean", "Elin"]
 
+const msgTime = new Date(),
+    curTime = msgTime.getHours() + ':' + msgTime.getMinutes()
+
 const userChatList =
 {
     id: "1",
     userName: "PubNub Bot",
-    time: "12:05",
+    time: curTime,
     userMessage: "Welcome to Team Chat. Send a message now to start interacting with other user in the app",
     isLiked: false
 }
 
-
 class Homepage extends Component {
     state = {
-        userName: 'Alan', userMessage: '', isLiked: '', userDataArray: [userChatList]
+        userName: 'Alan', userMessage: '', isLiked: '', userDataArray: [userChatList], time: curTime,
     }
 
     onInputElement = (event) => {
@@ -24,17 +26,18 @@ class Homepage extends Component {
     }
 
     onSubmitFormel = (event) => {
-        const { userName, userMessage, isLiked } = this.state
+        const { userName, userMessage, isLiked, time } = this.state
         event.preventDefault();
         let userlistLength = userlist.length
         let randomName = Math.ceil(Math.random() * userlistLength - 1)
         this.setState({ userName: userlist[randomName] })
+        this.setState({ time: curTime })
         if (userMessage === "") {
             alert("please enter valid input")
         } else {
             const NewUserDetails = {
                 userName,
-                time: "12:05",
+                time,
                 userMessage,
                 isLiked,
             }
@@ -46,35 +49,34 @@ class Homepage extends Component {
 
     render() {
         const { userDataArray, userMessage } = this.state
-        console.log(userDataArray)
-
 
         return (
-            <div className="home-main-div">
-                <div className="header-main-div">
-                    <div>
-                        <h1>Intruduction</h1>
-                        <p>This Channer For Company Wide Chatter</p>
+            <div className="home-div">
+                <div className="home-main-div">
+                    <div className="header-main-div">
+                        <div>
+                            <h2 className="home-intro-head">Intruduction</h2>
+                            <p className="home-intro-para">This Channer For Company Wide Chatter</p>
 
+                        </div>
+                        <div>
+                            <span>3 | </span>
+                            <span>100</span>
+
+                        </div>
                     </div>
-                    <div>
-                        <span>3 | </span>
-                        <span>100</span>
-
+                    <div className="home-bottom-div">
+                        <div className="homeChatBoxDiv">
+                            {
+                                userDataArray.map((each) => (
+                                    <Userchat userDataArray={each} />
+                                ))
+                            }
+                        </div>
+                        <form onSubmit={this.onSubmitFormel}>
+                            <input className="home-input" value={userMessage} onChange={this.onInputElement} type="text" />
+                        </form>
                     </div>
-                </div>
-                <div className="home-bottom-div">
-                <div className="homeChatBoxDiv">
-                    {
-                        userDataArray.map((each) => (
-                            <Userchat userDataArray={each} />
-                        ))
-                    }
-
-                </div>
-                <form onSubmit={this.onSubmitFormel}>
-                    <input className="home-input" value={userMessage} onChange={this.onInputElement} type="text" />
-                </form>
                 </div>
             </div>)
     }
