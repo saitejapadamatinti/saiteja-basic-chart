@@ -1,4 +1,5 @@
 import "./index.css"
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 
 const conversationArray = ["Poland Office", "Intruductions", "India Offic"]
 
@@ -16,15 +17,19 @@ const SideBar = () => {
                     </div>
                 </div>
                 <div className="side-bar-conversation-div">
-                    <h3 className="home-intro-head">Conversations</h3>
+                    <div className="Conversations-div">
+                    <h3 className="Conversations-intro-head">Conversations </h3><div><AiOutlinePlusCircle className="plus-icon" /></div>
+                    </div>
                     <ul className="side-bar-ul">
-                        {
-                            conversationArray.map((each) => (
                                 <li><div className="side-bar-Conversations-items">
-                                <p className="hash-letter-span">#</p> <p>{each}</p>
+                                <p className="hash-letter-span">#</p> <p>Poland Office</p>
                             </div></li>
-                            ))
-                        }
+                                <li className="side-bar-active"><div className="side-bar-Conversations-items">
+                                <p className="hash-letter-span hash-letter-span-active">#</p> <p>Intruductions</p>
+                            </div></li>
+                                <li><div className="side-bar-Conversations-items">
+                                <p className="hash-letter-span">#</p> <p>India Offic</p>
+                            </div></li>
                     </ul>
                 </div>
             </div></>

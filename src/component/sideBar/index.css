@@ -1,7 +1,7 @@
 .side-bar-main-div{
     height: 100vh;
     width: 20%;
-    padding: 30px 10px 0px 10px;
+    padding: 30px 0px 0px 0px;
 }
 .side-bar-user-div{
     background-color: #ec8e8f;
@@ -20,10 +20,11 @@
 .side-bar-user-main-div{
     display: flex;
     align-items: center;    
+    padding-left: 30px;
 }
 .side-bar-conversation-div{
     margin-top: 50px;
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 .hash-letter-span{
     width: 40px;
@@ -41,7 +42,8 @@
 .side-bar-Conversations-items{
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    padding-left: 30px;
 }
 .side-bar-online-dot{
     background-color: #b6e378;
@@ -51,4 +53,30 @@
     position: relative;
     left: -28px;
     top: 23px;
+}
+.side-bar-active{
+    background-color: #629df4;
+    padding: 15px 0px 15px 0px;
+    margin: 15px 0px 15px 0px;
+    color: #fff;
+}
+.Conversations-div{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+.Conversations-intro-head{
+    color: #515256;
+    
+}
+.hash-letter-span-active{
+    background-color: #5f93e5;
+}
+.plus-icon{
+    font-size: 22px;
+    margin-top: 9px;
+    color: #9f9f9f;
 }
