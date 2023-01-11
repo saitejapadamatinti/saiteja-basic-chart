@@ -50,6 +50,9 @@ class Homepage extends Component {
 
     }
 
+
+    
+
     render() {
         const { userDataArray, userMessage } = this.state
 
@@ -77,7 +80,7 @@ class Homepage extends Component {
                             }
                         </div>
                         <form onSubmit={this.onSubmitFormel}>
-                            <input className="home-input" value={userMessage} onChange={this.onInputElement} type="text" />
+                            <input id="homeInputFeald" className="home-input" value={userMessage} onChange={this.onInputElement} type="text" />
                         </form>
                     </div>
                 </div>
