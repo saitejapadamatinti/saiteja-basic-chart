@@ -72,13 +72,13 @@ class Homepage extends Component {
                         </div>
                     </div>
                     <div className="home-bottom-div">
-                        <div className="homeChatBoxDiv">
+                        <ol className="homeChatBoxDiv">
                             {
                                 userDataArray.map((each) => (
                                     <Userchat userDataArray={each} />
                                 ))
                             }
-                        </div>
+                        </ol>
                         <form onSubmit={this.onSubmitFormel}>
                             <input id="homeInputFeald" className="home-input" value={userMessage} onChange={this.onInputElement} type="text" />
                         </form>

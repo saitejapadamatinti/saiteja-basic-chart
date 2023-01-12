@@ -42,16 +42,17 @@
     outline: none;
 }
 
-.home-bottom-div {
+/* .home-bottom-div {
     display: flex;
     flex-direction: column;
     justify-content: end;
-}
+} */
 
 .homeChatBoxDiv {
-    display: flex;
+    /* display: flex; */
     height: 620px;
     overflow-y: scroll;
     flex-direction: column;
     justify-content: flex-end;
+    /* margin-top: 491px; */
 }
