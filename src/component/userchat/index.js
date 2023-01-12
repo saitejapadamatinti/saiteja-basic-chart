@@ -2,9 +2,11 @@ import "./index.css"
 import { SlLike } from "react-icons/sl"
 import { useState } from "react"
 
+
+
 const Userchat = (props) => {
     const { userDataArray } = props
-    const { userName, userMessage, isLiked, time } = userDataArray
+    const { userName, userMessage, time, backgroundColor } = userDataArray
 
     const [likesCount, setLikesCount] = useState(0)
 
@@ -21,7 +23,7 @@ const Userchat = (props) => {
         <li className="chat-list-item">
             <div className="chat-main-div">
                 <div className="chat-user-data">
-                    <h4 className="chat-user-logo">{newShortName.toUpperCase()}</h4></div>
+                    <h4 style={{backgroundColor:backgroundColor}} className="chat-user-logo">{newShortName.toUpperCase()}</h4></div>
                 <div className="chat-user-data-div">
                     <div className="chat-user-data"><h3 className="chat-user-name">{userName}</h3> <p className="chat-user-time">{time}</p></div>
                     <div className="chat-user-msg-like-div">

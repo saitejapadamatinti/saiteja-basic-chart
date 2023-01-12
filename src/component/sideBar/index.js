@@ -1,7 +1,7 @@
 import "./index.css"
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 
-const conversationArray = ["Poland Office", "Intruductions", "India Offic"]
+// const conversationArray = ["Poland Office", "Intruductions", "India Offic"]
 
 const SideBar = () => {
     return (
